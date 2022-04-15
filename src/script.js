@@ -34,23 +34,35 @@ const gltfLoader = new GLTFLoader()
 gltfLoader.setDRACOLoader(dracoLoader)
 
 /**
+ * Lights
+ */
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.9)
+scene.add(ambientLight)
+
+const directionalLight = new THREE.DirectionalLight("#ffffff", 20)
+directionalLight.castShadow = true
+directionalLight.position.set(0, 1, 0)
+directionalLight.shadow.mapSize.set(1024, 1024)
+scene.add(directionalLight)
+
+/**
  * Textures
  */
-const bakedTexture = textureLoader.load('baked.jpg')
-bakedTexture.flipY = false
-bakedTexture.encoding = THREE.sRGBEncoding
+// const bakedTexture = textureLoader.load('baked.jpg')
+// bakedTexture.flipY = false
+// bakedTexture.encoding = THREE.sRGBEncoding
 
 /**
  * Materials
  */
-// Baked material
-const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
+// // Baked material
+// const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
 
-// Pole light material
-const poleLightMaterial = new THREE.MeshBasicMaterial({ color: 0xffffe5 })
+// // Pole light material
+// const poleLightMaterial = new THREE.MeshBasicMaterial({ color: 0xffffe5 })
 
-// Portal light material
-const portalLightMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff })
+// // Portal light material
+// const portalLightMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff })
 
 /**
  * Model
@@ -102,10 +114,10 @@ window.addEventListener('resize', () =>
  * Camera
  */
 // Base camera
-const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 100)
-camera.position.x = 4
-camera.position.y = 2
-camera.position.z = 4
+const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 1000)
+camera.position.x = 5
+camera.position.y = 15
+camera.position.z = - 20
 scene.add(camera)
 
 // Controls
