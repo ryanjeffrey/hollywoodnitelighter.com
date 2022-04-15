@@ -36,10 +36,10 @@ gltfLoader.setDRACOLoader(dracoLoader)
 /**
  * Lights
  */
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.9)
+const ambientLight = new THREE.AmbientLight('#b9d5ff', 2);
 scene.add(ambientLight)
 
-const directionalLight = new THREE.DirectionalLight("#ffffff", 20)
+const directionalLight = new THREE.DirectionalLight("#ffffff", 5)
 directionalLight.castShadow = true
 directionalLight.position.set(0, 1, 0)
 directionalLight.shadow.mapSize.set(1024, 1024)
@@ -134,6 +134,7 @@ const renderer = new THREE.WebGLRenderer({
 renderer.outputEncoding = THREE.sRGBEncoding
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+renderer.setClearColor("#262837")
 
 /**
  * Animate
