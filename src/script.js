@@ -31,13 +31,13 @@ const particleTexture = textureLoader.load("/textures/particles/9.png");
  */
 // Geometry
 const particlesGeometry = new THREE.BufferGeometry();
-const count = 20000;
+const count = 5000;
 
 const positions = new Float32Array(count * 3);
 const colors = new Float32Array(count * 3);
 
 for (let i = 0; i < count * 3; i++) {
-  positions[i] = (Math.random() - 0.5) * 80;
+  positions[i] = (Math.random() - 0.5) * 100;
   colors[i] = Math.random();
 }
 
@@ -79,11 +79,11 @@ gltfLoader.setDRACOLoader(dracoLoader)
 const ambientLight = new THREE.AmbientLight('#b9d5ff', 2);
 scene.add(ambientLight)
 
-const directionalLight = new THREE.DirectionalLight("#ffffff", 5)
-directionalLight.castShadow = true
-directionalLight.position.set(0, 1, 0)
-directionalLight.shadow.mapSize.set(1024, 1024)
-scene.add(directionalLight)
+// const directionalLight = new THREE.DirectionalLight("#ffffff", 2)
+// directionalLight.castShadow = true
+// directionalLight.position.set(0, 1, 0)
+// directionalLight.shadow.mapSize.set(1024, 1024)
+// scene.add(directionalLight)
 
 /**
  * Textures
@@ -154,10 +154,10 @@ window.addEventListener('resize', () =>
  * Camera
  */
 // Base camera
-const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 1000)
-camera.position.x = 5
-camera.position.y = 15
-camera.position.z = - 20
+const camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 700)
+camera.position.x = 25
+camera.position.y = 40
+camera.position.z = - 70
 scene.add(camera)
 
 // Controls
