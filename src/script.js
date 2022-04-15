@@ -8,10 +8,10 @@ import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 /**
  * Base
  */
-// Debug
-const gui = new dat.GUI({
-    width: 400
-})
+// // Debug
+// const gui = new dat.GUI({
+//     width: 400
+// })
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -79,11 +79,11 @@ gltfLoader.setDRACOLoader(dracoLoader)
 const ambientLight = new THREE.AmbientLight('#b9d5ff', 2);
 scene.add(ambientLight)
 
-// const directionalLight = new THREE.DirectionalLight("#ffffff", 2)
-// directionalLight.castShadow = true
-// directionalLight.position.set(0, 1, 0)
-// directionalLight.shadow.mapSize.set(1024, 1024)
-// scene.add(directionalLight)
+const directionalLight = new THREE.DirectionalLight("#ffffff", 2)
+directionalLight.castShadow = true
+directionalLight.position.set(0, 1, 0)
+directionalLight.shadow.mapSize.set(1024, 1024)
+scene.add(directionalLight)
 
 /**
  * Textures
