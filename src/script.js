@@ -180,10 +180,13 @@ renderer.setClearColor("#262837")
  * Animate
  */
 const clock = new THREE.Clock()
+let lastElapsedTime = 0
 
 const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime()
+    const deltaTime = elapsedTime - lastElapsedTime
+    lastElapsedTime = elapsedTime
 
     // Update controls
     controls.update()
