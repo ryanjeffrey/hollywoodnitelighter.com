@@ -31,7 +31,7 @@ const particleTexture = textureLoader.load("/textures/particles/9.png");
  */
 // Geometry
 const particlesGeometry = new THREE.BufferGeometry();
-const count = 5000;
+const count = 1000;
 
 const positions = new Float32Array(count * 3);
 const colors = new Float32Array(count * 3);
@@ -49,7 +49,7 @@ particlesGeometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
 // Material
 const particlesMaterial = new THREE.PointsMaterial({
-  size: 0.6,
+  size: 3,
   sizeAttenuation: true,
   // color: '#ff88cc',
   alphaMap: particleTexture,
@@ -154,9 +154,9 @@ window.addEventListener('resize', () =>
  * Camera
  */
 // Base camera
-const camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 700)
-camera.position.x = 25
-camera.position.y = 40
+const camera = new THREE.PerspectiveCamera(30, sizes.width / sizes.height, 0.1, 400)
+camera.position.x = 55
+camera.position.y = 50
 camera.position.z = - 70
 scene.add(camera)
 
