@@ -111,6 +111,10 @@ gltfLoader.load(
     'hollywood.glb',
     (gltf) =>
     {
+        // gltf.scene.traverse((child) =>
+        // {
+        //     child.material = bakedMaterial
+        // })
         scene.add(gltf.scene)
 
         // // Get each object
@@ -168,8 +172,12 @@ controls.dampingFactor = 0.05;
 controls.screenSpacePanning = false;
 
 controls.minDistance = 50;
-controls.maxDistance = 125;
+controls.maxDistance = 120;
 
+controls.autoRotate = true;
+controls.autoRotateSpeed = 1;
+
+controls.minPolarAngle = Math.PI * 0.3;
 controls.maxPolarAngle = Math.PI * 0.5;
 
 /**
