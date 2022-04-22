@@ -24,7 +24,7 @@ const scene = new THREE.Scene()
  */
 // Texture loader
 const textureLoader = new THREE.TextureLoader()
-const particleTexture = textureLoader.load("/textures/particles/9.png");
+const particleTexture = textureLoader.load("/textures/particles/4.png");
 
 /**
  * Particles
@@ -51,7 +51,7 @@ particlesGeometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 const particlesMaterial = new THREE.PointsMaterial({
   size: 3,
   sizeAttenuation: true,
-  // color: '#ff88cc',
+  color: '#ff88cc',
   alphaMap: particleTexture,
   transparent: true,
   // alphaTest: 0.001,
@@ -88,18 +88,18 @@ scene.add(directionalLight)
 /**
  * Textures
  */
-// const bakedTexture = textureLoader.load('baked.jpg')
-// bakedTexture.flipY = false
-// bakedTexture.encoding = THREE.sRGBEncoding
+const bakedTexture = textureLoader.load('baked.006.jpg')
+bakedTexture.flipY = false
+bakedTexture.encoding = THREE.sRGBEncoding
 
 /**
  * Materials
  */
-// // Baked material
-// const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
+// Baked material
+const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
 
-// // Pole light material
-// const poleLightMaterial = new THREE.MeshBasicMaterial({ color: 0xffffe5 })
+// Pole light material
+// const poleLightMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 })
 
 // // Portal light material
 // const portalLightMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff })
@@ -108,19 +108,19 @@ scene.add(directionalLight)
  * Model
  */
 gltfLoader.load(
-    'hollywood.glb',
+    'hollywood-sim.glb',
     (gltf) =>
     {
-        // gltf.scene.traverse((child) =>
-        // {
-        //     child.material = bakedMaterial
-        // })
+        gltf.scene.traverse((child) =>
+        {
+            child.material = bakedMaterial
+        })
         scene.add(gltf.scene)
 
         // // Get each object
         // const bakedMesh = gltf.scene.children.find((child) => child.name === 'baked')
         // const portalLightMesh = gltf.scene.children.find((child) => child.name === 'portalLight')
-        // const poleLightAMesh = gltf.scene.children.find((child) => child.name === 'poleLightA')
+        // const poleLightAMesh = gltf.scene.children.find((child) => child.name === 'beam.003')
         // const poleLightBMesh = gltf.scene.children.find((child) => child.name === 'poleLightB')
 
         // // Apply materials
@@ -158,10 +158,10 @@ window.addEventListener('resize', () =>
  * Camera
  */
 // Base camera
-const camera = new THREE.PerspectiveCamera(30, sizes.width / sizes.height, 0.1, 400)
-camera.position.x = 20
-camera.position.y = 0
-camera.position.z = - 75
+const camera = new THREE.PerspectiveCamera(20, sizes.width / sizes.height, 0.1, 400)
+camera.position.x = - 1450
+camera.position.y = 400
+camera.position.z = - 800
 scene.add(camera)
 
 // Controls
@@ -171,13 +171,13 @@ controls.dampingFactor = 0.05;
 
 controls.screenSpacePanning = false;
 
-controls.minDistance = 50;
-controls.maxDistance = 120;
+controls.minDistance = 100;
+controls.maxDistance = 185;
 
 controls.autoRotate = true;
 controls.autoRotateSpeed = 1;
 
-controls.minPolarAngle = Math.PI * 0.3;
+controls.minPolarAngle = Math.PI * 0.4;
 controls.maxPolarAngle = Math.PI * 0.5;
 
 /**

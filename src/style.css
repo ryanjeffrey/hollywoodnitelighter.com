@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap');
+
 *
 {
     margin: 0;
@@ -17,3 +19,78 @@ body
     left: 0;
     outline: none;
 }
+
+.test
+{
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+.test h1, p, h2, ul, h3
+{
+    font-family: 'Akshar', sans-serif;
+    font-size: 134px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    opacity: 100%;
+}
+.test h1 {
+    padding-top: 420px;
+}
+
+.test h2 {
+    font-size: 36px;
+    color: rgb(208, 67, 67);
+}
+
+.test p
+{
+    font-size: 60px;
+}
+
+.test ul
+{
+    font-size: 30px;
+}
+
+.test h3
+{
+    font-size: 40px;
+}
+
+
+
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 7))}
+}
+
+.slider {
+	height: 100px;
+	margin: auto;
+	overflow: hidden;
+	position: fixed;
+	width: 100%;
+    bottom: 0;
+    pointer-events: none;
+    background-color: black;
+}
+
+.slide-track {
+		animation: scroll 40s linear infinite;
+		display: flex;
+		width: calc(250px * 14);
+        background-color: black;
+        transition: 1s;
+	}
+    .slide {
+		height: 100px;
+		width: 250px;
+	}
