@@ -34,14 +34,18 @@ body
 .test h1, p, h2, ul, h3
 {
     font-family: 'Akshar', sans-serif;
-    font-size: 134px;
+    font-size: 40 px;
     margin-left: auto;
     margin-right: auto;
     color: white;
     opacity: 100%;
 }
-.test h1 {
-    padding-top: 420px;
+
+.test h1
+{
+    position: fixed;
+    left: 20px;
+    top: 20px;
 }
 
 .test h2 {
@@ -64,6 +68,46 @@ body
     font-size: 40px;
 }
 
+.services
+{
+    position: fixed;
+    bottom: 120px;
+    left: 20px;
+    text-decoration: none;
+}
+
+ul
+{
+    list-style: none;
+}
+
+.info
+{
+    position: fixed;
+    top: 55px;
+    left: 20px;
+}
+
+.info p {
+    padding: 0;
+    margin: 0;
+    font-size: 56px;
+    text-align: right;
+}
+
+.gallery-link
+{
+    
+    position: fixed;
+    right: 20px;
+    bottom: 120px;
+}
+
+.gallery-link p
+{
+    font-size: 40px;
+}
+
 
 
 
@@ -80,14 +124,14 @@ body
 	width: 100%;
     bottom: 0;
     pointer-events: none;
-    background-color: black;
+    background-color: #1c1c1c;
 }
 
 .slide-track {
 		animation: scroll 40s linear infinite;
 		display: flex;
 		width: calc(250px * 14);
-        background-color: black;
+        background-color: #1c1c1c;
         transition: 1s;
 	}
     .slide {

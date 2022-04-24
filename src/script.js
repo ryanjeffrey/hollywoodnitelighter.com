@@ -49,7 +49,7 @@ particlesGeometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
 // Material
 const particlesMaterial = new THREE.PointsMaterial({
-  size: 3,
+  size: 6,
   sizeAttenuation: true,
   color: '#ff88cc',
   alphaMap: particleTexture,
@@ -76,19 +76,19 @@ gltfLoader.setDRACOLoader(dracoLoader)
 /**
  * Lights
  */
-const ambientLight = new THREE.AmbientLight('#b9d5ff', 2);
-scene.add(ambientLight)
+// const ambientLight = new THREE.AmbientLight('#b9d5ff', 200);
+// scene.add(ambientLight)
 
-const directionalLight = new THREE.DirectionalLight("#ffffff", 2)
-directionalLight.castShadow = true
-directionalLight.position.set(0, 1, 0)
-directionalLight.shadow.mapSize.set(1024, 1024)
-scene.add(directionalLight)
+// const directionalLight = new THREE.DirectionalLight("#ffffff", 1)
+// directionalLight.castShadow = true
+// directionalLight.position.set(0, 1, 0)
+// directionalLight.shadow.mapSize.set(1024, 1024)
+// scene.add(directionalLight)
 
 /**
  * Textures
  */
-const bakedTexture = textureLoader.load('baked.006.jpg')
+const bakedTexture = textureLoader.load('baked.004.jpg')
 bakedTexture.flipY = false
 bakedTexture.encoding = THREE.sRGBEncoding
 
@@ -108,7 +108,7 @@ const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
  * Model
  */
 gltfLoader.load(
-    'hollywood-sim.glb',
+    'hollywood-lights.glb',
     (gltf) =>
     {
         gltf.scene.traverse((child) =>
@@ -159,7 +159,7 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(20, sizes.width / sizes.height, 0.1, 400)
-camera.position.x = - 1450
+camera.position.x = 0
 camera.position.y = 400
 camera.position.z = - 800
 scene.add(camera)
@@ -171,13 +171,13 @@ controls.dampingFactor = 0.05;
 
 controls.screenSpacePanning = false;
 
-controls.minDistance = 100;
+controls.minDistance = 160;
 controls.maxDistance = 185;
 
 controls.autoRotate = true;
 controls.autoRotateSpeed = 1;
 
-controls.minPolarAngle = Math.PI * 0.4;
+controls.minPolarAngle = Math.PI * 0.5;
 controls.maxPolarAngle = Math.PI * 0.5;
 
 /**
