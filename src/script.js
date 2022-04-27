@@ -8,10 +8,16 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js'
 import { SMAAPass } from 'three/examples/jsm/postprocessing/SMAAPass.js'
+import Stats from 'stats.js'
 
 /**
  * Base
  */
+// Stats
+const stats = new Stats()
+stats.showPanel(0) // 0: fps, 1: ms, 2: mb, 3+: custom
+document.body.appendChild(stats.dom)
+
 // // Debug
 // const gui = new dat.GUI({
 //     width: 400
@@ -223,6 +229,8 @@ let lastElapsedTime = 0
 
 const tick = () =>
 {
+    stats.begin()
+
     const elapsedTime = clock.getElapsedTime()
     const deltaTime = elapsedTime - lastElapsedTime
     lastElapsedTime = elapsedTime
@@ -236,6 +244,8 @@ const tick = () =>
 
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
+
+    stats.end()
 }
 
 tick()
