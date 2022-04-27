@@ -71,7 +71,7 @@ body
 .services
 {
     position: fixed;
-    bottom: 120px;
+    bottom: 160px;
     left: 20px;
     text-decoration: none;
 }
@@ -100,7 +100,7 @@ ul
     
     position: fixed;
     right: 20px;
-    bottom: 120px;
+    bottom: 160px;
 }
 
 .gallery-link p
