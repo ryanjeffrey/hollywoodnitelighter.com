@@ -4,6 +4,10 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js'
+import { SMAAPass } from 'three/examples/jsm/postprocessing/SMAAPass.js'
 
 /**
  * Base
@@ -175,7 +179,7 @@ controls.minDistance = 160;
 controls.maxDistance = 185;
 
 controls.autoRotate = true;
-controls.autoRotateSpeed = 1;
+controls.autoRotateSpeed = 2.5;
 
 controls.minPolarAngle = Math.PI * 0.5;
 controls.maxPolarAngle = Math.PI * 0.5;
@@ -191,6 +195,26 @@ renderer.outputEncoding = THREE.sRGBEncoding
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.setClearColor("#0B1026")
+
+/**
+ * Post processing
+ */
+const effectComposer = new EffectComposer(renderer)
+effectComposer.setSize(sizes.width, sizes.height)
+effectComposer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
+const renderPass = new RenderPass(scene, camera)
+effectComposer.addPass(renderPass)
+
+const unrealBloomPass = new UnrealBloomPass()
+unrealBloomPass.strength = 1
+unrealBloomPass.radius = 1
+unrealBloomPass.threshold = 0.5
+effectComposer.addPass(unrealBloomPass)
+
+const smaaPass = new SMAAPass()
+effectComposer.addPass(smaaPass)
+
 /**
  * Animate
  */
@@ -208,6 +232,7 @@ const tick = () =>
 
     // Render
     renderer.render(scene, camera)
+    effectComposer.render()
 
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
