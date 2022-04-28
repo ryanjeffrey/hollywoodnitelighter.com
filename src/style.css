@@ -34,7 +34,7 @@ body
 .test h1, p, h2, ul, h3
 {
     font-family: 'Akshar', sans-serif;
-    font-size: 40 px;
+    font-size: 40px;
     margin-left: auto;
     margin-right: auto;
     color: white;
@@ -44,6 +44,7 @@ body
 .test h1
 {
     position: fixed;
+    font-size: 31px;
     left: 20px;
     top: 20px;
 }
@@ -139,3 +140,25 @@ ul
 		height: 100px;
 		width: 250px;
 	}
+
+@media only screen and (max-width: 768px) {
+  .test h1, .services ul, .gallery-link p
+  {
+    font-size: 16px;
+    color: #1c1c1c;
+    mix-blend-mode: screen;
+  }
+
+  .info p
+  {
+    color: #1c1c1c;
+    font-size: 33px;
+    margin-top: -16px;
+  }
+
+  .services, .gallery-link
+  {
+    bottom: 120px;
+  }
+
+}
