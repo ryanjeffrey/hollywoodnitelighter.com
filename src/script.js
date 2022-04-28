@@ -213,7 +213,7 @@ const renderPass = new RenderPass(scene, camera)
 effectComposer.addPass(renderPass)
 
 const unrealBloomPass = new UnrealBloomPass()
-unrealBloomPass.strength = 1
+unrealBloomPass.strength = 1.2
 unrealBloomPass.radius = 1
 unrealBloomPass.threshold = 0.5
 effectComposer.addPass(unrealBloomPass)
