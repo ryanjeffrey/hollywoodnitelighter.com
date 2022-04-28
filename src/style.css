@@ -134,7 +134,8 @@ ul
         background-color: #1c1c1c;
         transition: 1s;
 	}
-    .slide {
+
+.slide {
 		height: 100px;
 		width: 250px;
 	}

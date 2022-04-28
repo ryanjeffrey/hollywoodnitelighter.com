@@ -162,6 +162,10 @@ window.addEventListener('resize', () =>
     // Update renderer
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
+    // Update effect composer
+    effectComposer.setSize(sizes.width, sizes.height)
+    effectComposer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
 /**
@@ -181,8 +185,8 @@ controls.dampingFactor = 0.05;
 
 controls.screenSpacePanning = false;
 
-controls.minDistance = 160;
-controls.maxDistance = 185;
+controls.minDistance = 100;
+controls.maxDistance = 175;
 
 controls.autoRotate = true;
 controls.autoRotateSpeed = 2.5;
@@ -206,8 +210,6 @@ renderer.setClearColor("#0B1026")
  * Post processing
  */
 const effectComposer = new EffectComposer(renderer)
-effectComposer.setSize(sizes.width, sizes.height)
-effectComposer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 const renderPass = new RenderPass(scene, camera)
 effectComposer.addPass(renderPass)
