@@ -4,6 +4,7 @@
 {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html,
@@ -114,7 +115,7 @@ ul
 
 @keyframes scroll {
 	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-250px * 7))}
+	100% { transform: translateX(calc(-250px * 13))}
 }
 
 .slider {
@@ -131,7 +132,7 @@ ul
 .slide-track {
 		animation: scroll 40s linear infinite;
 		display: flex;
-		width: calc(250px * 14);
+		width: calc(250px * 13);
         background-color: #1c1c1c;
         transition: 1s;
 	}
