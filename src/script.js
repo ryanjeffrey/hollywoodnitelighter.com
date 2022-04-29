@@ -32,6 +32,9 @@ const scene = new THREE.Scene()
 /**
  * Loaders
  */
+// GLTF loader
+const gltfLoader = new GLTFLoader()
+
 // Texture loader
 const textureLoader = new THREE.TextureLoader()
 const particleTexture = textureLoader.load("/textures/particles/4.png");
@@ -74,14 +77,6 @@ const particlesMaterial = new THREE.PointsMaterial({
 // Points
 const particles = new THREE.Points(particlesGeometry, particlesMaterial);
 scene.add(particles);
-
-// Draco loader
-const dracoLoader = new DRACOLoader()
-dracoLoader.setDecoderPath('draco/')
-
-// GLTF loader
-const gltfLoader = new GLTFLoader()
-gltfLoader.setDRACOLoader(dracoLoader)
 
 /**
  * Lights
