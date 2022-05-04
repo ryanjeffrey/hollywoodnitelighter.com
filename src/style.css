@@ -21,10 +21,19 @@ body
     outline: none;
 }
 
+.header-wrapper
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 .test
 {
     position: fixed;
-    z-index: 9999;
+    z-index: 99;
     top: 0;
     width: 100%;
     display: flex;
@@ -32,23 +41,28 @@ body
     pointer-events: none;
 }
 
-.test h1, p, h2, ul, h3
+h1, p, h2, ul, h3
 {
     font-family: 'Akshar', sans-serif;
-    font-size: 40px;
+    font-size: 30px;
     margin-left: auto;
     margin-right: auto;
     color: white;
-    opacity: 100%;
+    mix-blend-mode: difference;
 }
 
-.test h1
+.header 
 {
-    position: fixed;
-    font-size: 31px;
-    left: 20px;
-    top: 20px;
+    padding-top: 20px;
 }
+
+.header h1
+{
+    z-index: 999999999;
+    font-size: 16px;
+}
+
+
 
 .test h2 {
     font-size: 36px;
@@ -62,7 +76,7 @@ body
 
 .test ul
 {
-    font-size: 30px;
+    font-size: 24px;
 }
 
 .test h3
@@ -73,7 +87,7 @@ body
 .services
 {
     position: fixed;
-    bottom: 160px;
+    bottom: 120px;
     left: 20px;
     text-decoration: none;
 }
@@ -95,23 +109,96 @@ ul
     margin: 0;
     font-size: 56px;
     text-align: right;
+    z-index: 999999999;
+    mix-blend-mode: difference;
 }
+
+
 
 button
 {
     position: fixed;
     right: 20px;
-    bottom: 160px;
+    bottom: 120px;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Akshar', sans-serif;
     padding: 10px;
     background-color: white;
     border: none;
-    border-radius: 24px;
+    border-radius: 16px;
     color: #1c1c1c;
-    padding: 10px;
+    z-index: 99999999;
 }
+
+/********* IMAGE GALLERY *********/
+.image-gallery {
+    width: 30%;
+    height: 50%;
+    border-radius: 3px;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    background: #1c1c1c;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+  
+  .image-gallery:hover .controls {
+    opacity: 1;
+  }
+  
+  .controls {
+    opacity: 0;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 99999;
+    transition: all ease 0.5s;
+   }
+    .control {
+      margin: 0 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.7);
+      opacity: .5;
+      transition: ease .3s;
+      cursor: pointer;
+    }  
+      .control:hover {
+        opacity: 1;
+      }
+    
+  
+  
+    .image-gallery-slides {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      display: flex;
+      width: 100%;
+      transition: 1s ease-in-out all;
+    }  
+    .image-gallery-slide {
+        min-width: 100%;
+        min-height: 40vh;
+        height: auto;
+    }
+    
+
 
 
 
@@ -119,11 +206,11 @@ button
 
 @keyframes scroll {
 	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-250px * 13))}
+	100% { transform: translateX(calc(-200px * 13))}
 }
 
 .slider {
-	height: 100px;
+	height: 80px;
 	margin: auto;
 	overflow: hidden;
 	position: fixed;
@@ -136,22 +223,22 @@ button
 .slide-track {
 		animation: scroll 40s linear infinite;
 		display: flex;
-		width: calc(250px * 13);
+		width: calc(200px * 13);
         background-color: #1c1c1c;
-        transition: 1s;
+        transition: transform 0.5s ease;
 	}
 
 .slide {
-		height: 100px;
-		width: 250px;
+		height: 80px;
+		width: 200px;
 	}
 
 @media only screen and (max-width: 768px) {
-  .test h1, .services ul, .gallery-link p
+  .header h1, .services ul li, .gallery-link p
   {
     font-size: 16px;
-    color: #1c1c1c;
-    mix-blend-mode: screen;
+    color: white;
+    mix-blend-mode: difference;
   }
 
   .info p
@@ -159,11 +246,6 @@ button
     color: #1c1c1c;
     font-size: 33px;
     margin-top: -16px;
-  }
-
-  .services, .gallery-link
-  {
-    bottom: 120px;
   }
 
 }
