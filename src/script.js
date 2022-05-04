@@ -93,15 +93,15 @@ scene.add(particles);
 /**
  * Textures
  */
-const bakedTexture = textureLoader.load('baked.007.jpg')
-bakedTexture.flipY = false
-bakedTexture.encoding = THREE.sRGBEncoding
+// const bakedTexture = textureLoader.load('baked.007.jpg')
+// bakedTexture.flipY = false
+// bakedTexture.encoding = THREE.sRGBEncoding
 
 /**
  * Materials
  */
 // Baked material
-const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
+// const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
 
 // Pole light material
 // const poleLightMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 })
@@ -116,10 +116,10 @@ gltfLoader.load(
     'hollywood-lights.glb',
     (gltf) =>
     {
-        gltf.scene.traverse((child) =>
-        {
-            child.material = bakedMaterial
-        })
+        // gltf.scene.traverse((child) =>
+        // {
+        //     child.material = bakedMaterial
+        // })
         scene.add(gltf.scene)
 
         // // Get each object
@@ -167,9 +167,9 @@ window.addEventListener('resize', () =>
  * Camera
  */
 // Base camera
-const camera = new THREE.PerspectiveCamera(20, sizes.width / sizes.height, 0.1, 400)
+const camera = new THREE.PerspectiveCamera(22, sizes.width / sizes.height, 0.1, 400)
 camera.position.x = 0
-camera.position.y = 400
+camera.position.y = 1
 camera.position.z = - 800
 scene.add(camera)
 
@@ -210,9 +210,9 @@ const renderPass = new RenderPass(scene, camera)
 effectComposer.addPass(renderPass)
 
 const unrealBloomPass = new UnrealBloomPass()
-unrealBloomPass.strength = 1.2
+unrealBloomPass.strength = 0.5
 unrealBloomPass.radius = 1
-unrealBloomPass.threshold = 0.5
+unrealBloomPass.threshold = 0.4
 effectComposer.addPass(unrealBloomPass)
 
 const smaaPass = new SMAAPass()
