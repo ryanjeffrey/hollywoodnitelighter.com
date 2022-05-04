@@ -97,18 +97,22 @@ ul
     text-align: right;
 }
 
-.gallery-link
+button
 {
-    
     position: fixed;
     right: 20px;
     bottom: 160px;
+    cursor: pointer;
+    font-size: 30px;
+    font-family: 'Akshar', sans-serif;
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 24px;
+    color: #1c1c1c;
+    padding: 10px;
 }
 
-.gallery-link p
-{
-    font-size: 40px;
-}
 
 
 
