@@ -56,6 +56,11 @@ a:link, a:visited, a:hover, a:active {
     text-decoration: none; 
 }
 
+a
+{
+    color: inherit;
+}
+
 .header 
 {
     padding-top: 20px;
@@ -188,6 +193,7 @@ button:hover
       display: flex;
       width: 100%;
       transition: 1s ease-in-out all;
+      pointer-events: none;
     }  
     .image-gallery-slide {
         min-width: 100%;
