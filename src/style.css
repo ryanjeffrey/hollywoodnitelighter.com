@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Odibee+Sans&display=swap');
 
 *
 {
@@ -11,6 +11,7 @@ html,
 body
 {
     overflow: hidden;
+    font-family: 'Akshar', sans-serif;
 }
 
 .webgl
@@ -43,12 +44,16 @@ body
 
 h1, p, h2, ul, h3
 {
-    font-family: 'Akshar', sans-serif;
+    
     font-size: 30px;
     margin-left: auto;
     margin-right: auto;
     color: #f1e9ff;
     mix-blend-mode: difference;
+}
+
+a:link, a:visited, a:hover, a:active { 
+    text-decoration: none; 
 }
 
 .header 
@@ -198,7 +203,7 @@ button
 	overflow: hidden;
 	position: fixed;
 	width: 100%;
-    bottom: 0;
+    bottom: 30px;
     pointer-events: none;
     background-color: #1c1c1c;
 }
@@ -215,6 +220,27 @@ button
 		width: 200px;
 	}
 
+
+.footer-wrapper {
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    z-index: 999999999;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+}
+
+footer a {
+    font-family: 'Odibee Sans', cursive;
+    font-size: 16px;
+    color: #1c1c1c;
+}
+
 @media only screen and (max-width: 768px) {
   .header h1, .services ul li, .gallery-link p
   {
@@ -222,12 +248,4 @@ button
     color: white;
     mix-blend-mode: difference;
   }
-
-  .info p
-  {
-    color: #1c1c1c;
-    font-size: 33px;
-    margin-top: -16px;
-  }
-
 }
