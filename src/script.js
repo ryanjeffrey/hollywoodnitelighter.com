@@ -44,7 +44,7 @@ const particleTexture = textureLoader.load("/textures/particles/4.png");
  */
 // Geometry
 const particlesGeometry = new THREE.BufferGeometry();
-const count = 500;
+const count = 700;
 
 const positions = new Float32Array(count * 3);
 const colors = new Float32Array(count * 3);
