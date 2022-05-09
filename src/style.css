@@ -97,24 +97,6 @@ ul
     list-style: none;
 }
 
-.info
-{
-    position: fixed;
-    top: 55px;
-    left: 20px;
-}
-
-.info p {
-    padding: 0;
-    margin: 0;
-    font-size: 56px;
-    text-align: right;
-    z-index: 999999999;
-    mix-blend-mode: difference;
-}
-
-
-
 button
 {
     position: fixed;
