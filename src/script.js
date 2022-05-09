@@ -195,14 +195,24 @@ controls.maxPolarAngle = Math.PI * 0.5;
 // Display gallery on button click
 const targetDiv = document.getElementById("target");
 const btn = document.getElementById("toggle");
+const closeBtn = document.getElementById("close");
 
 btn.onclick = function () {
-  if (targetDiv.style.display !== "flex") {
-    targetDiv.style.display = "flex";
+  if (targetDiv.style.opacity !== "1") {
+    targetDiv.style.opacity = "1";
+    btn.style.display = "none";
   } else {
-    targetDiv.style.display = "none";
+    targetDiv.style.opacity = "0";
   }
 };
+
+closeBtn.onclick = () => {
+    targetDiv.style.opacity = "0";
+    btn.style.display = "flex"
+};
+
+
+
 
 // Image gallery slides
 const delay = 3000; //ms

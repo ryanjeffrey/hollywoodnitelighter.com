@@ -92,7 +92,7 @@ a:link, a:visited, a:hover, a:active {
 .services
 {
     position: fixed;
-    bottom: 120px;
+    bottom: 140px;
     left: 20px;
     text-decoration: none;
 }
@@ -104,37 +104,40 @@ ul
 
 button
 {
-    position: fixed;
-    right: 20px;
-    bottom: 120px;
     cursor: pointer;
     font-size: 20px;
     font-family: 'Akshar', sans-serif;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.377);
     border: none;
-    border-radius: 16px;
+    border-radius: 32px;
     color: #1c1c1c;
     z-index: 99999999;
 }
 
+.open-gallery button
+{
+    position: fixed;
+    right: 20px;
+    bottom: 140px;
+} 
+
 /********* IMAGE GALLERY *********/
 .image-gallery {
     max-width: 100%;
-    width: 400px;
-    border-radius: 3px;
+    width: 500px;
     overflow: hidden;
     position: fixed;
     right: 0;
     top: 0;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    z-index: 99;
-    background: #1c1c1c;
-    display: none;
+    z-index: 999;
+    background: #000000da;
+    opacity: 0;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    transition: all 1s ease-in-out;
+    height: 100vh;
+    transition: opacity ease-in 0.5s;
 }
   
   .image-gallery:hover .controls {
@@ -145,7 +148,7 @@ button
     opacity: 0;
     display: flex;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 0;
     justify-content: space-between;
     width: 100%;
@@ -153,7 +156,7 @@ button
     transition: all ease 0.5s;
    }
     .control {
-      margin: 0 5px;
+      margin: 0 20px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -173,7 +176,7 @@ button
   
     .image-gallery-slides {
       position: absolute;
-      top: 50%;
+      top: 45%;
       left: 0;
       transform: translateY(-50%);
       display: flex;
@@ -186,6 +189,14 @@ button
         height: auto;
     }
     
+#close button {
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    top: 20px;
+    left: 20px;
+    color: white;
+}
 
 
 
@@ -224,28 +235,41 @@ button
 .footer-wrapper {
     position: fixed;
     bottom: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: black;
     z-index: 999999999;
     height: 30px;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: right; */
     text-align: center;
     font-size: 12px;
+    color: white;
+}
+
+footer {
+    margin-left: 20px;
 }
 
 footer a {
     font-family: 'Odibee Sans', cursive;
     font-size: 16px;
-    color: #1c1c1c;
+    color: white;
 }
 
 @media only screen and (max-width: 768px) {
-  .header h1, .services ul li, .gallery-link p
-  {
-    font-size: 16px;
-    color: white;
-    mix-blend-mode: difference;
-  }
+    .header h1, .services ul li, .gallery-link p
+    {
+        font-size: 16px;
+        color: white;
+    }
+
+  
+}
+
+@media only screen and (max-width: 525px) {
+    .services ul li 
+    {
+        color: black;
+    }
 }
