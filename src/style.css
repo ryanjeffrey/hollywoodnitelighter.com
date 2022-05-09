@@ -116,7 +116,7 @@ button
     background-color: rgba(255, 255, 255, 0.377);
     border: none;
     border-radius: 32px;
-    color: #1c1c1c;
+    color: white;
     z-index: 99999999;
     transition: all ease 0.5s;
 }
@@ -281,6 +281,11 @@ footer a {
 
 @media only screen and (max-width: 525px) {
     .services ul li 
+    {
+        color: black;
+    }
+
+    button 
     {
         color: black;
     }
