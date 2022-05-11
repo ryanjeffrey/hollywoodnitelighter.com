@@ -218,7 +218,7 @@ button:hover
 
 @keyframes scroll {
 	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-200px * 13))}
+	100% { transform: translateX(calc(-200px * 19))}
 }
 
 .slider {
@@ -233,9 +233,9 @@ button:hover
 }
 
 .slide-track {
-		animation: scroll 40s linear infinite;
+		animation: scroll 44s linear infinite;
 		display: flex;
-		width: calc(200px * 13);
+		width: calc(200px * 19);
         background-color: #1c1c1c;
 	}
 
