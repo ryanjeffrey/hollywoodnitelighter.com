@@ -159,7 +159,7 @@ button:hover
     opacity: 0;
     display: flex;
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 0;
     justify-content: space-between;
     width: 100%;
