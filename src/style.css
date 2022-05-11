@@ -248,7 +248,7 @@ button:hover
 .footer-wrapper {
     position: fixed;
     bottom: 0;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 999999999;
     height: 24px;
     width: 100%;
