@@ -62,7 +62,7 @@ particlesGeometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
 // Material
 const particlesMaterial = new THREE.PointsMaterial({
-  size: 4,
+  size: 3,
   sizeAttenuation: true,
   color: "#FFFFFF",
   alphaMap: particleTexture,
@@ -167,10 +167,10 @@ window.addEventListener('resize', () =>
  * Camera
  */
 // Base camera
-const camera = new THREE.PerspectiveCamera(22, sizes.width / sizes.height, 0.1, 400)
-camera.position.x = 0
-camera.position.y = 1
-camera.position.z = - 800
+const camera = new THREE.PerspectiveCamera(44, sizes.width / sizes.height, 0.3, 800)
+camera.position.x = 2
+camera.position.y = -2
+camera.position.z = 0
 scene.add(camera)
 
 // Controls
@@ -180,8 +180,8 @@ controls.dampingFactor = 0.05;
 
 controls.screenSpacePanning = false;
 
-controls.minDistance = 100;
-controls.maxDistance = 175;
+controls.minDistance = 200;
+controls.maxDistance = 200;
 
 controls.autoRotate = true;
 controls.autoRotateSpeed = 2.5;
@@ -271,7 +271,7 @@ const renderPass = new RenderPass(scene, camera)
 effectComposer.addPass(renderPass)
 
 const unrealBloomPass = new UnrealBloomPass()
-unrealBloomPass.strength = 0.5
+unrealBloomPass.strength = 0.7
 unrealBloomPass.radius = 1
 unrealBloomPass.threshold = 0.4
 effectComposer.addPass(unrealBloomPass)
