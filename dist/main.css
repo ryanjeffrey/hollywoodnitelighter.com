@@ -158,12 +158,13 @@ button:hover
     opacity: 0;
     display: flex;
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 0;
     justify-content: space-between;
     width: 100%;
     z-index: 99999;
     transition: all ease 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
    }
     .control {
       margin: 0 20px;
@@ -216,7 +217,7 @@ button:hover
 
 @keyframes scroll {
 	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-200px * 13))}
+	100% { transform: translateX(calc(-200px * 19))}
 }
 
 .slider {
@@ -225,15 +226,15 @@ button:hover
 	overflow: hidden;
 	position: fixed;
 	width: 100%;
-    bottom: 30px;
+    bottom: 24px;
     pointer-events: none;
     background-color: #1c1c1c;
 }
 
 .slide-track {
-		animation: scroll 40s linear infinite;
+		animation: scroll 44s linear infinite;
 		display: flex;
-		width: calc(200px * 13);
+		width: calc(200px * 19);
         background-color: #1c1c1c;
 	}
 
@@ -246,9 +247,9 @@ button:hover
 .footer-wrapper {
     position: fixed;
     bottom: 0;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 999999999;
-    height: 30px;
+    height: 24px;
     width: 100%;
     display: flex;
     align-items: center;
