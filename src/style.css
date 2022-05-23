@@ -282,13 +282,8 @@ footer a {
 }
 
 @media only screen and (max-width: 525px) {
-    .services ul li 
+    .services ul li, button
     {
-        color: black;
-    }
-
-    button 
-    {
-        color: black;
+        color: rgb(164, 155, 223);
     }
 }
