@@ -149,6 +149,7 @@ button:hover
     align-items: center;
     height: 100vh;
     transition: opacity ease-in 0.5s;
+    visibility: hidden;
 }
   
   .image-gallery:hover .controls {

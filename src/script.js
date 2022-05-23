@@ -198,17 +198,19 @@ const btn = document.getElementById("toggle");
 const closeBtn = document.getElementById("close");
 
 btn.onclick = function () {
-  if (targetDiv.style.opacity !== "1") {
+  if (targetDiv.style.visibility !== "visible") {
+    targetDiv.style.visibility = "visible";
     targetDiv.style.opacity = "1";
     btn.style.display = "none";
-  } else {
-    targetDiv.style.opacity = "0";
   }
 };
 
 closeBtn.onclick = () => {
     targetDiv.style.opacity = "0";
-    btn.style.display = "flex"
+    setTimeout(function () {
+      targetDiv.style.visibility = "hidden";
+    }, 600);
+    btn.style.display = "flex";
 };
 
 
