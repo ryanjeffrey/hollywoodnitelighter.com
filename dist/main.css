@@ -148,6 +148,7 @@ button:hover
     align-items: center;
     height: 100vh;
     transition: opacity ease-in 0.5s;
+    visibility: hidden;
 }
   
   .image-gallery:hover .controls {
@@ -280,14 +281,9 @@ footer a {
 }
 
 @media only screen and (max-width: 525px) {
-    .services ul li 
+    .services ul li, button
     {
-        color: black;
-    }
-
-    button 
-    {
-        color: black;
+        color: rgb(164, 155, 223);
     }
 }
 
