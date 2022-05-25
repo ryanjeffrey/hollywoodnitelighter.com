@@ -79,60 +79,13 @@ const particles = new THREE.Points(particlesGeometry, particlesMaterial);
 scene.add(particles);
 
 /**
- * Lights
- */
-// const ambientLight = new THREE.AmbientLight('#b9d5ff', 200);
-// scene.add(ambientLight)
-
-// const directionalLight = new THREE.DirectionalLight("#ffffff", 1)
-// directionalLight.castShadow = true
-// directionalLight.position.set(0, 1, 0)
-// directionalLight.shadow.mapSize.set(1024, 1024)
-// scene.add(directionalLight)
-
-/**
- * Textures
- */
-// const bakedTexture = textureLoader.load('baked.007.jpg')
-// bakedTexture.flipY = false
-// bakedTexture.encoding = THREE.sRGBEncoding
-
-/**
- * Materials
- */
-// Baked material
-// const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
-
-// Pole light material
-// const poleLightMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 })
-
-// // Portal light material
-// const portalLightMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff })
-
-/**
  * Model
  */
 gltfLoader.load(
     'hollywood-lights.glb',
     (gltf) =>
     {
-        // gltf.scene.traverse((child) =>
-        // {
-        //     child.material = bakedMaterial
-        // })
         scene.add(gltf.scene)
-
-        // // Get each object
-        // const bakedMesh = gltf.scene.children.find((child) => child.name === 'baked')
-        // const portalLightMesh = gltf.scene.children.find((child) => child.name === 'portalLight')
-        // const poleLightAMesh = gltf.scene.children.find((child) => child.name === 'beam.003')
-        // const poleLightBMesh = gltf.scene.children.find((child) => child.name === 'poleLightB')
-
-        // // Apply materials
-        // bakedMesh.material = bakedMaterial
-        // portalLightMesh.material = portalLightMaterial
-        // poleLightAMesh.material = poleLightMaterial
-        // poleLightBMesh.material = poleLightMaterial
     }
 )
 
