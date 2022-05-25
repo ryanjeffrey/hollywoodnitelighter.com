@@ -129,7 +129,7 @@ scene.add(camera)
 // Controls
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true;
-controls.dampingFactor = 0.05;
+// controls.dampingFactor = 0.09;
 
 controls.screenSpacePanning = false;
 
