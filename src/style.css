@@ -22,13 +22,13 @@ body
     outline: none;
 }
 
-.header-wrapper
+.header
 {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     text-align: center;
+    position: absolute;
+    top: 44px;
 }
 
 .test
@@ -44,11 +44,8 @@ body
 
 h1, p, h2, ul, h3
 {
-    
     font-size: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    color: #f1e9ff;
+    color: #ffffff;
     mix-blend-mode: difference;
 }
 
@@ -61,14 +58,10 @@ a
     color: inherit;
 }
 
-.header 
-{
-    padding-top: 20px;
-}
 
 .header h1
 {
-    z-index: 999999999;
+    z-index: 999999999999999999;
     font-size: 16px;
 }
 
@@ -117,7 +110,7 @@ button
     border: none;
     border-radius: 32px;
     color: white;
-    z-index: 99999999;
+    z-index: 9999999999;
     transition: all ease 0.5s;
 }
 
@@ -142,7 +135,7 @@ button:hover
     right: 0;
     top: 0;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    z-index: 999;
+    z-index: 9999;
     background: #000000da;
     opacity: 0;
     justify-content: center;
@@ -282,8 +275,40 @@ footer a {
 }
 
 @media only screen and (max-width: 525px) {
-    .services ul li, button
+
+    .menu-content
     {
-        color: rgb(164, 155, 223);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #00000083;
+        z-index: 99;
+        /* color: white; */
+        width: 100vw;
+        height: 100vh;
+        visibility: hidden;
+        transition: opacity ease-in 0.5s;
+        opacity: 0;
+    }
+
+    #menu-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+    }
+
+    #back button {
+        position: absolute;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        top: 20px;
+        left: 20px;
+        color: white;
+    }
+
+    .header {
+        z-index: 99999;
     }
 }

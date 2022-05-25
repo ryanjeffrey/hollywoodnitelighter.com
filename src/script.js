@@ -143,6 +143,30 @@ controls.minPolarAngle = Math.PI * 0.5;
 controls.maxPolarAngle = Math.PI * 0.5;
 
 /**
+ * Mobile menu
+ */
+const servicesList = document.getElementById("menu-content");
+const menuBtn = document.getElementById("menu-button");
+const backBtn = document.getElementById("back");
+
+menuBtn.onclick = function () {
+  if (servicesList.style.visibility !== "visible") {
+    servicesList.style.visibility = "visible";
+    servicesList.style.opacity = "1";
+    menuBtn.style.display = "none"
+  }
+}
+
+backBtn.onclick = () => {
+  servicesList.style.opacity = "0";
+  setTimeout(function () {
+    servicesList.style.visibility = "hidden";
+    menuBtn.style.display = "block"
+  }, 600);
+  
+}
+
+/**
  * Photo gallery
  */
 // Display gallery on button click
@@ -155,6 +179,7 @@ btn.onclick = function () {
     targetDiv.style.visibility = "visible";
     targetDiv.style.opacity = "1";
     btn.style.display = "none";
+    backBtn.style.visibility = "hidden"
   }
 };
 
@@ -164,6 +189,7 @@ closeBtn.onclick = () => {
       targetDiv.style.visibility = "hidden";
     }, 600);
     btn.style.display = "flex";
+    backBtn.style.visibility = "visible"
 };
 
 
